@@ -1,0 +1,49 @@
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+pnpm-debug.log
+
+# Next.js
+.next/
+.vercel/
+out/
+
+# Build output
+*.log
+*.tsbuildinfo
+
+dist/
+build/
+
+# TypeScript
+*.d.ts.map
+*.d.ts
+
+# dotenv environment variables
+.env*
+!.env.example
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Editor-specific files
+.vscode/
+.idea/
+
+# GitHub Actions cache
+.github/workflows/*.log
+
+# Docker
+docker-compose.override.yml
+*.dockerfile
+
+# Misc
+coverage/
+*.swp
+*.swo
+*.swn
+
+# Next.js experimental cache (optional)
+.cache/
