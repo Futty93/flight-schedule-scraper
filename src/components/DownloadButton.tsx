@@ -1,4 +1,5 @@
 "use client";
+import { useState } from "react";
 import { saveAs } from 'file-saver';
 
 interface DownloadButtonProps {
@@ -6,7 +7,12 @@ interface DownloadButtonProps {
 }
 
 export default function DownloadButton({ flights }: DownloadButtonProps) {
+    const [loading, setLoading] = useState(false);
+
     const handleDownload = async () => {
+        console.log("Download button clicked");
+        setLoading(true);
+
         try {
             // API への POST リクエスト
             const response = await fetch("/api/scrape", {
@@ -39,19 +45,35 @@ export default function DownloadButton({ flights }: DownloadButtonProps) {
 
         } catch (error) {
             console.error("Error downloading ICS:", error);
+        } finally {
+            setLoading(false);
         }
     };
 
     return (
-        <button onClick={handleDownload} className="bg-green-500 text-white px-4 py-2">
-            .ics ダウンロード
+        <button
+            onClick={handleDownload}
+            className={`relative flex items-center justify-center px-6 py-3 text-white font-semibold rounded-lg transition-all duration-300 
+                ${loading ? "bg-gray-500 cursor-not-allowed" : "bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700"}
+                shadow-lg hover:shadow-xl`}
+            disabled={loading}
+        >
+            {loading ? (
+                <>
+                    <span
+                        className="w-5 h-5 border-2 border-t-transparent border-white rounded-full animate-spin mr-2"></span>
+                    ダウンロード中...
+                </>
+            ) : (
+                ".ics ダウンロード"
+            )}
         </button>
     );
 }
 
 // `.ics` フォーマットに変換
 function generateICS(flights: FlightData[], airportData: Record<string, any>): string { // 修正
-    const icsEntries = flights.map(({ date, flightNumber, departure, arrival, depTime, arrTime }) => {
+    const icsEntries = flights.map(({date, flightNumber, departure, arrival, depTime, arrTime}) => {
         const depDateTime = new Date(`${date}T${convertTo24Hour(depTime)}:00`);
         let arrDateTime = new Date(`${date}T${convertTo24Hour(arrTime)}:00`);
 

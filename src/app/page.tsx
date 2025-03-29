@@ -19,11 +19,15 @@ export default function Home() {
   };
 
   return (
-      <main className="container mx-auto p-4">
-        <h1 className="text-2xl font-bold mb-4">フライトスケジュールスクレイピング</h1>
-        <FlightForm addFlight={addFlight} />
-        <FlightList flights={flights} removeFlight={removeFlight} />
-        {flights.length > 0 && <DownloadButton flights={flights} />}
+      <main className="container mx-auto p-6 max-w-lg bg-white dark:bg-gray-950 dark:text-white rounded-lg shadow-lg">
+          <h1 className="text-3xl font-bold tracking-wide mb-6 text-center">
+              フライトスケジュールスクレイピング
+          </h1>
+          <div className="flex flex-col gap-6">
+              <FlightForm addFlight={addFlight}/>
+              <FlightList flights={flights} removeFlight={removeFlight}/>
+              {flights.length > 0 && <DownloadButton flights={flights}/>}
+          </div>
       </main>
   );
 }
