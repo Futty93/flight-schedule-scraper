@@ -19,7 +19,7 @@ export default function Home() {
   };
 
   return (
-      <main className="container mx-auto p-6 max-w-lg bg-white dark:bg-gray-950 dark:text-white rounded-lg shadow-lg">
+      <main className="container mx-auto max-w-xl p-6 bg-white dark:bg-gray-950 dark:text-white rounded-lg shadow-lg">
           <h1 className="text-3xl font-bold tracking-wide mb-6 text-center">
               フライトスケジュールスクレイピング
           </h1>
