@@ -1,0 +1,78 @@
+{
+    "CTS": {
+        "name": "新千歳空港",
+        "address": "北海道千歳市美々",
+        "postal_code": "066-0012",
+        "latitudee": 42.787496,
+        "longitude": 141.680460
+    },
+    "HND": {
+        "name": "東京国際空港（羽田空港）",
+        "address": "東京都大田区羽田空港3丁目3-2",
+        "postal_code": "144-0041",
+        "latitude": 35.548759,
+        "longitude": 139.783875
+    },
+    "FUK": {
+        "name": "福岡空港",
+        "address": "福岡県福岡市博多区下臼井",
+        "postal_code": "812-0000",
+        "latitude": 33.597274,
+        "longitude": 130.447911
+    },
+    "UKB": {
+        "name": "神戸空港",
+        "address": "兵庫県神戸市中央区神戸空港",
+        "postal_code": "650-0048",
+        "latitude": 34.636757,
+        "longitude": 135.228524
+    },
+    "OKA": {
+        "name": "那覇空港",
+        "address": "沖縄県那覇市",
+        "postal_code": "90-0000",
+        "latitude": 26.206332,
+        "longitude": 127.650812
+    },
+    "NGS": {
+        "name": "長崎空港",
+        "address": "長崎県長崎市小浜町",
+        "postal_code": "856-0816"
+    },
+    "NGO": {
+        "name": "中部国際空港（セントレア）",
+        "address": "愛知県常滑市セントレア",
+        "postal_code": "479-0881"
+    },
+    "SDJ": {
+        "name": "仙台空港",
+        "address": "宮城県名取市杜せきのした",
+        "postal_code": "989-6101"
+    },
+    "KOJ": {
+        "name": "鹿児島空港",
+        "address": "鹿児島県霧島市溝辺町麓822",
+        "postal_code": "899-6494",
+        "latitude": 31.800937,
+        "longitude": 130.716088
+    },
+    "SHI": {
+        "name": "下地島空港",
+        "address": "沖縄県宮古島市伊良部字佐和田1727番地",
+        "postal_code": "906-0507"
+    },
+    "IBR": {
+        "name": "茨城空港",
+        "address": "茨城県小美玉市大字大久保",
+        "postal_code": "311-3414",
+        "latitude": 36.181667,
+        "longitude": 140.415833
+    },
+    "ASJ": {
+        "name": "奄美空港",
+        "address": "鹿児島県奄美市名瀬市",
+        "postal_code": "894-0505",
+        "latitude": 28.431667,
+        "longitude": 129.712778
+    }
+}
