@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { saveAs } from 'file-saver';
+import { FlightInfo } from "@/types";
 
 interface DownloadButtonProps {
     flights: { date: string; flightNumber: string }[];
@@ -53,7 +54,7 @@ export default function DownloadButton({ flights }: DownloadButtonProps) {
     return (
         <button
             onClick={handleDownload}
-            className={`relative flex items-center justify-center px-6 py-3 text-white font-semibold rounded-lg transition-all duration-300 
+            className={`relative flex items-center justify-center px-6 py-3 text-white font-semibold rounded-lg transition-all duration-300
                 ${loading ? "bg-gray-500 cursor-not-allowed" : "bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700"}
                 shadow-lg hover:shadow-xl`}
             disabled={loading}
@@ -72,7 +73,7 @@ export default function DownloadButton({ flights }: DownloadButtonProps) {
 }
 
 // `.ics` フォーマットに変換
-function generateICS(flights: FlightData[], airportData: Record<string, any>): string { // 修正
+function generateICS(flights: FlightInfo[], airportData: Record<string, any>): string { // 修正
     const icsEntries = flights.map(({date, flightNumber, departure, arrival, depTime, arrTime}) => {
         const depDateTime = new Date(`${date}T${convertTo24Hour(depTime)}:00`);
         let arrDateTime = new Date(`${date}T${convertTo24Hour(arrTime)}:00`);

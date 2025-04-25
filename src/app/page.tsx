@@ -10,8 +10,25 @@ export default function Home() {
 
   const addFlight = (date: string, flightNumber: string) => {
     if (flights.length < 70) {
-      setFlights([...flights, { date, flightNumber }]);
+      setFlights(prevFlights => [...prevFlights, { date, flightNumber }]);
     }
+  };
+
+  const addBulkFlights = (newFlights: { date: string; flightNumber: string }[]) => {
+    setFlights(prevFlights => {
+      const combinedFlights = [...prevFlights];
+
+      // 最大70件までの制限を守りながら追加
+      for (const flight of newFlights) {
+        if (combinedFlights.length < 70) {
+          combinedFlights.push(flight);
+        } else {
+          break;
+        }
+      }
+
+      return combinedFlights;
+    });
   };
 
   const removeFlight = (index: number) => {
@@ -24,7 +41,7 @@ export default function Home() {
               フライトスケジュールスクレイピング
           </h1>
           <div className="flex flex-col gap-6">
-              <FlightForm addFlight={addFlight}/>
+              <FlightForm addFlight={addFlight} addBulkFlights={addBulkFlights}/>
               <FlightList flights={flights} removeFlight={removeFlight}/>
               {flights.length > 0 && <DownloadButton flights={flights}/>}
           </div>
